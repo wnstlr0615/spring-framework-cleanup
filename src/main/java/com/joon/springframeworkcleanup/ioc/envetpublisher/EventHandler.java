@@ -6,7 +6,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class EventHandler {
     @EventListener
     // @Async 비동기 처리 비동기 처리 시 @EnableAsync를 추가해주어야한다

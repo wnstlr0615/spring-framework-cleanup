@@ -182,3 +182,14 @@ __package com.joon.springframeworkcleanup.ioc.messagesource 참조__
 
 ###테스트
 __package com.joon.springframeworkcleanup.ioc.evnetpulisher 참조__
+
+### Resourece
+리소스를 읽어오는 기능을 하는 인터페이스로  
+파일 시스템 , 클래스 패스, URL, 상대/절대 경로 등으로 읽어 올 수 있다.
++ ClassPathXmlApplicationContext   -> ClassPathResource 
++ FileSystemXmlApplicationContext  -> FileSystemResource
++ WebApplicationContext            -> ServletContextResource
+
+다음 과 같은 종류가 있으며 통상 classpath: 를 사용 하거나 file:///를 사용 하여 파일에 접근한다.
+###테스트
+__package com.joon.springframeworkcleanup.ioc.resourceloader 참조__
