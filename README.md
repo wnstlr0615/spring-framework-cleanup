@@ -91,3 +91,24 @@ public class BookB implements Book{}
 __package com.joon.springframeworkcleanup.ioc.autowired 참조__
 
 
+### 빈 Scope
+
+빈은 싱글톤과 프로토 타입으로 설정 가능하며 싱글톤 적용 시 등록 된 빈은 항상 같은 객체이며
+프로토 타입으로 적용된 빈은 항상 다른 객체이다.
+
+**프로토 타입 설정방법**
+@Scope(value="prototype") 적용
+
+
+싱글톤 객체에서 프로토 타입 객체를 생성 시 항상 같은 객체가 생성 되는 문제가 생긴다.
+
+이 경우  @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
+프록시 모드를 적용하여 해결
+
+**싱글톤 객체 사용 시 주의점**
++ 프로퍼티가 공유됨
++ 초기 구동 시 생성됨
+
+### 테스트
+__package com.joon.springframeworkcleanup.ioc.scope 참조__
+
