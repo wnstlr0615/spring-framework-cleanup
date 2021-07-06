@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class AppEnvironmentRunner implements ApplicationRunner {
     @Autowired
     Environment environment;

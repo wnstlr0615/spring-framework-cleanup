@@ -162,5 +162,12 @@ vm옵션에 -Dspring.profiles.active="test" 등록
 __package com.joon.springframeworkcleanup.ioc.environment 참조__
 
 
+### MessageSource
+Messages.properties에 등록된 프로퍼티로 메시지 다국화 기능 지원(i18n)
+
+MessageSource 의 빈을 입력받아서 사용
+
+###테스트
+__package com.joon.springframeworkcleanup.ioc.messagesource 참조__
 
 
