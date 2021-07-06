@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-@Component
+//@Component
 public class AppResourceLoaderRunner implements ApplicationRunner {
 
     @Autowired

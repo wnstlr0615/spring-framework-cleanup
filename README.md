@@ -193,3 +193,16 @@ __package com.joon.springframeworkcleanup.ioc.evnetpulisher 참조__
 다음 과 같은 종류가 있으며 통상 classpath: 를 사용 하거나 file:///를 사용 하여 파일에 접근한다.
 ###테스트
 __package com.joon.springframeworkcleanup.ioc.resourceloader 참조__
+
+### Validator
+객체 검증용 인터페이스로
+객체에 올바른 값이 입력 되었는지 검사하는 기능을 제공해준다  
+직접 등록할 경우 Validator를 구현 하여 구현해주면 된다.
+ 
+Jpa에 사용 시 @NotNull, @Min, @Max, 등에 어노테이션을 사용하여 Validator 등록 할 수 있다.
+ 
+모든 계층에서 사용 가능 하다라는 장점이 있다
+
+__package com.joon.springframeworkcleanup.ioc.validation 참조__
+
+
