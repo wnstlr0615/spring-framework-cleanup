@@ -112,3 +112,55 @@ __package com.joon.springframeworkcleanup.ioc.autowired 참조__
 ### 테스트
 __package com.joon.springframeworkcleanup.ioc.scope 참조__
 
+
+
+### Environment
+프로파일과 프로퍼티를 관리하는 객체이다
+
+ApplicationContext에 상속 되어 있으므로 getEnvironment로 받아 사용하거나
+그냥 Autowired를 통해 빈주입
+
+1. ApplicationContext를 통한 생성방법
+<pre><code>
+@Autowired
+ApplicationContext context;
+----------------------------------
+Environment environment=context.getEnvironment();
+</code></pre>
+2. 바로 생성 방법
+<pre><code>
+@Autowired
+Environment environment;
+
+</code></pre>
+
+###프로퍼티 
+
+environment.getProperty(key) 메소드를 사용하여 등록된 값을 읽어 올 수 있다.
+
+**프로 퍼티 추가 등록 방법** <br>
+Application 클래스에 @PropertySource 를 통하여 등록 할 수 있다.
+<pre><code>
+@SpringBootApplication
+@PropertySource("classpath:/app.properties")
+public class SpringFrameworkCleanupApplication {...}
+</code></pre>
+
+
+### 프로파일 관리 
+
+클래스나 메소드에 @Profile()를 등록하여 사용
+
+프로파일로 등록하면 해당 프로파일명이 활성활 될 경우에만 빈으로 등록된다.
+
+**프로파일 활성화방법**
+vm옵션에 -Dspring.profiles.active="test" 등록
+또는 구성편집에서 등록
+
+
+###테스트
+__package com.joon.springframeworkcleanup.ioc.environment 참조__
+
+
+
+

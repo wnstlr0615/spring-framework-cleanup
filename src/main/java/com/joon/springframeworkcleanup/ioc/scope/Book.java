@@ -3,7 +3,7 @@ package com.joon.springframeworkcleanup.ioc.scope;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Book {
     @Autowired
     Bag bag;
