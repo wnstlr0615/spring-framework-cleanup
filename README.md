@@ -171,3 +171,14 @@ MessageSource 의 빈을 입력받아서 사용
 __package com.joon.springframeworkcleanup.ioc.messagesource 참조__
 
 
+### EventPublisher
+이벤트를 처리하는 객체로 
+이벤트를 발생 시켜준다
+
+**이벤트 처리**  
+1. 이벤트 객체를 생성 후(MyEvent)
+2. publishEvent(new MyEvent())메소드를 이용하여 이벤트 발생
+3. EventHandler 를 생성하여 @EventListener 를 통하여 이벤트 를 받아 처리
+
+###테스트
+__package com.joon.springframeworkcleanup.ioc.evnetpulisher 참조__
