@@ -5,7 +5,9 @@
 백기선님의 [스프링 프레임 워크 핵심 기술]( https://www.inflearn.com/course/spring-framework_core/dashboard )을 기반으로 개인 정리용으로 작성
 
 ## 목차
-
++ IoC
+  + BeanFactory
+  + Autowired
 
 ## ApplicationContext 
 스프링 애플리케이션 전반에 걸쳐 모든 구성요소의 제어 작업을 담당하는 IoC 엔진
@@ -40,10 +42,52 @@ ApplicationContext 등록방법
 다음과 같은 방법들로 ApplicationContext 는 등록해주어 하지만 스프링 부트 사용 시 @SpringBootApplication 에
 @ComponentScan 이 포함 되어 있어 Application 클래스가 포함된 하위 패키지에 어노테이션으로 등록한 빈들을 IoC 컨테이너에 등록해준다.
 
-### 테스트
+###  테스트
 __package com.joon.springframeworkcleanup.ioc.beanfactory 참조__
 
+## @Autowired
+@Autowired 는 자동으로 클래스에 해당 객체를 주입해준다(빈으로 등록 된)
 
 
+빈 등록x <br>
+Book book=new Book();
+
+빈 등록 <br>
+@Autowired
+Book book;
+
+이렇게 빈으로 등록된 객체를 의존성 관리를 해주는데  주입 될 수 있는 빈이 두개 이상인 경우 
+어떤 것을 등록해주어야하는지 설정 해주어야한다.
+
+예시<br>
+Book 인터페이스를 구현한 BookA와 BookB가 있을 경우<br>
+<pre><code>
+@Autowired
+Book book;
+</code></pre>
+
+
+1. @Qualifier 사용 하는 경우
+<pre><code>
+@Qualifier("bookA")
+    @Autowired
+    Book book;
+</code></pre>
+2. @Primary를 사용하는 경우
+<pre><code>
+@Autowired
+Book book;
+----------------------------
+@Component
+@Primary
+public class BookB implements Book{}
+</code></pre>
+
+다음과 같은 방법으로 동시에 주입될 수 있는 빈이 있는 경우 선택해 줄 수 있다.
+
+
+@Autowired(required=false) 로 설정 시 오류 x 사용 시 오류
+### 테스트
+__package com.joon.springframeworkcleanup.ioc.autowired 참조__
 
 

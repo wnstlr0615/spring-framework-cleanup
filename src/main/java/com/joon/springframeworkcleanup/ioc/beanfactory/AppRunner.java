@@ -1,14 +1,14 @@
-package com.joon.springframeworkcleanup.ioc.beanfactory;
+package com.joon.springframeworkcleanup.ioc.autowired;
 
+import com.joon.springframeworkcleanup.ioc.beanfactory.Appconfig;
+import com.joon.springframeworkcleanup.ioc.beanfactory.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class AppRunner implements ApplicationRunner {
 
     /**
