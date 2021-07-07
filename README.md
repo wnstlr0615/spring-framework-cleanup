@@ -274,5 +274,33 @@ ExpressionParser로 spel 을 읽어 올 수 있다.
 + Templated expression
 
 
+### AOP
 
+관점 지향 프로그래밍(Aspect Oriented Programming)에 약자로 소스코드의 여기저기 흩어져있는 횐단 관심사를 중심으로 설계와 구현을 하는 프로그래밍 기법이다
+
+**횡단관심사**
+
+핵심 비즈니스에서 다소 벗어나있고 여러 모듈에서 공통적 반복적으로 나타나는 내용
+
+
+### AOP 관련 용어
+**Aspect**    : AOP의 단위가 되는 횡단 관심사에 해당  
+**JoinPoint** : 횐단 관심사가 실행될 지점이나 시점  
+**Advice**    : 특정 조인 포인트에서 실행되는 코드
+**PointCut**  : 어드바이스를 적용할 곳을 나타내는 표현식
+
+
+**자원유형**
++ Before          : 실행 전
++ After Returning : 실행포인트가 정상적으로 종료된 후 실행
++ After Throwing  : 예외가 발생했을 경우 실행
++ After : 조인 포이튼 처리가 완료된 후 실행
++ Around : 조인 포인트 전후에 실행
+
+**의존성추가**
+<pre><code>
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+</code></pre>
+###테스트
+__package com.joon.springframeworkcleanup.aop 참조__
 
