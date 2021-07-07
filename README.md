@@ -220,9 +220,59 @@ public class EventFormatter implements Formatter< Event >{}
 public class EventConverter implements Converter< String , Event > {}
 </code></pre>
 
+컨버터와 포메터는 WebMvcConfigurer를 구현 하여 추가로 등록 할 수 있으나
+빈으로 등록시 자동으로 등록된다.
+<pre><code>
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addFormatters(FormatterRegistry registry) { 
+        registry.addConverter(new EventConverter());
+        WebMvcConfigurer.super.addFormatters(registry);
+    }
+}
+</code></pre>
 
 **ConversionService**
 컨버터와 포메터를 관리하는 서비스로  등록된 컨버터와 포메터를 확인 할 수 있다.
+
+###테스트
+__package com.joon.springframeworkcleanup.converter 참조__
+
+### SpringExpressionLanguage
+스프링에서 사용 하는 언어로 메서드 호출과 문자열 템플릿 기능을 제공한다.
+#{"표현식"}
+${"프로퍼티"}
+처럼 사용 할 수 있다
+자세한 사항은 [래퍼런스](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#expressions) 참조
+
+<pre><code>
+        ExpressionParser parser=new SpelExpressionParser();
+        Expression expression = parser.parseExpression("2+100");
+</code></pre>
+ExpressionParser로 spel 을 읽어 올 수 있다.
+
+**Spel 지원 기능**
+
+
++ 리터럴 표현식 (Literal Expression)
++ Boolean과 관계연산자 (Boolean and Relational Operator)
++ 정규 표현식 (Regular Expression)
++ 클래스 표현식 (Class Expression)
++ 프로퍼티, 배열, 리스트, 맵에 대한 접근 지원 (Accessing properties, arrays, lists, maps)
++ 메서드 호출 (Method Invocation)
++ 관계연산자 (Relational Operator)
++ 할당 (Assignment)
++ 생성자 호출 (Calling Constructors)
++ Bean 참조 (Bean References)
++ 배열 생성 (Array Contruction)
++ 인라인 리스트/맵 (Inline List/Map)
++ 삼항 연산자 (Ternary Operator)
++ 변수 (Variables)
++ 사용자 정의 함수 (User defined functions)
++ Collections Projection
++ Collections Selection
++ Templated expression
+
 
 
 

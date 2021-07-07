@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-@Component
+//@Component
 public class AppConverterRunner implements ApplicationRunner {
     @Autowired
     ConversionService conversionService;
