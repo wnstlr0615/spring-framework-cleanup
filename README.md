@@ -205,4 +205,24 @@ Jpa에 사용 시 @NotNull, @Min, @Max, 등에 어노테이션을 사용하여 V
 
 __package com.joon.springframeworkcleanup.ioc.validation 참조__
 
+### Converter,  Formatter
+
+**Converter**  
+ 데이터 바인딩 추상화 객체 
+특정 데이터 입력 시 원하는 데이터로 변환 해준다.
+쓰레드-세이프하여 안전하게 사용할 수 있다.
+
+**Formatter**
+웹에 특화된 데이터 바인딩 추상화 객체로 다국어 기능을 지원한다.
+
+<pre><code>
+public class EventFormatter implements Formatter< Event >{}
+public class EventConverter implements Converter< String , Event > {}
+</code></pre>
+
+
+**ConversionService**
+컨버터와 포메터를 관리하는 서비스로  등록된 컨버터와 포메터를 확인 할 수 있다.
+
+
 

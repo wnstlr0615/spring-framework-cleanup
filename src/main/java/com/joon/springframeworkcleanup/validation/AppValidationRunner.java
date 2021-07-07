@@ -12,7 +12,7 @@ import org.springframework.validation.Validator;
 
 import java.util.List;
 
-@Component
+//@Component
 public class AppValidationRunner implements ApplicationRunner {
     @Qualifier("bookValidator")// 여러 Validator이 등록되어 있으므로 한가지를 지정해준다.
     @Autowired
