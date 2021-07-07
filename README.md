@@ -7,7 +7,18 @@
 ## 목차
 + IoC
   + BeanFactory
-  + Autowired
+  + @Autowired
+    - @Primary
+    - @Qualifier
+  + @Scope
+  + Environment
+  + MessageSource
+  + EventPublisher
+  + Resource
++ Validator
++ Converter, Formatter
++ SpringExpressionLanguage
++ AOP
 
 ## ApplicationContext 
 스프링 애플리케이션 전반에 걸쳐 모든 구성요소의 제어 작업을 담당하는 IoC 엔진
